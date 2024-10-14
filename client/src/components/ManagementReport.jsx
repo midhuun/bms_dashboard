@@ -11,7 +11,7 @@ const ExportToExcel = () => {
   async function getData() {
     setLoading(true);
     try {
-      const result = await fetch('http://localhost:3000');
+      const result = await fetch('bms-dashboard-phi.vercel.app');
       const data = await result.json();
       setResults(data); 
       console.log(data);
