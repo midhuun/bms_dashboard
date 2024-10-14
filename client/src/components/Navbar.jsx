@@ -3,21 +3,20 @@ import Cebu from '../assets/cebu.jpg';
 import { RxCaretDown } from "react-icons/rx";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { CiAirportSign1, CiUser } from "react-icons/ci";
-import { CiMenuFries } from "react-icons/ci";
+import { BiHdd } from "react-icons/bi";
 import { CiCalendar } from "react-icons/ci";
 import { PiBuildingOfficeThin } from "react-icons/pi";
 import { CiSettings } from "react-icons/ci";
 import { PiKeyLight } from "react-icons/pi";
 import { MdOutlineInbox } from "react-icons/md";
 import { RiGolfBallLine, RiMenu2Line } from "react-icons/ri";
-import { IoIosClose } from "react-icons/io";
 import { IoClose } from 'react-icons/io5';
 const Navbar = () => {
   const [isMenu,setisMenu] = useState(false);
   return (
     <>
-    <RiMenu2Line onClick={()=>setisMenu(!isMenu)} size={24} className='cursor-pointer absolute top-7 left-1 block md:hidden' />
-    <div className={`z-[1000] ${isMenu?"absolute":"hidden"} relative lg:absolute w-64 lg:block left-0`}>
+    <RiMenu2Line onClick={()=>setisMenu(!isMenu)} size={24} className='cursor-pointer absolute top-9 left-1 block md:hidden' />
+    <div className={`z-[1000] ${isMenu?"fixed":"hidden"} relative lg:fixed w-64 lg:block left-0`}>
     <div  className='w-8 lg:hidden cursor-pointer h-8 flex justify-center items-center rounded-full text-red-500 bg-white hover:text-white absolute right-3 top-3 hover:bg-red-500 transition delay-100'>
       <IoClose  onClick={()=>setisMenu(!isMenu)} />
     </div>
@@ -119,14 +118,7 @@ const Navbar = () => {
             href="#"
             className="flex items-center p-2 text-gray-700 hover:bg-gray-200 "
           >
-            <svg
-              className="w-6 h-6 text-gray-400"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7v9c0 5 9 7 10 7s10-2 10-7V7l-10-5zm0 2.18L19.74 8.5 12 12.35 4.26 8.5 12 4.18zm0 15.64c-2.72-.01-8-1.36-8-4.19v-6.1l8 4.17v6.12zm1.94-9.82l8-4.17v6.1c0 2.83-5.28 4.18-8 4.19v-6.12z" />
-            </svg>
+            <BiHdd size={22} className='ml-2 ' />
             <span className="ml-3 font-medium">Cloud Sense</span>
           </a>
         </li>

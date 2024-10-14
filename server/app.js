@@ -7,7 +7,11 @@ import Case from './models/CaseModel.js';
 import WorkOrder from './models/WorkOrders.js';
 import Buildings from './models/BuildingSchema.js';
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods:["GET"],
+  credentials:true
+}));
 const port =  process.env.PORT  || 3000;
 
 const uri = `mongodb+srv://lordmurugan2023:OHKknibIQ0sFaWJf@bmsdasboard.kad5l.mongodb.net/?retryWrites=true&w=majority&appName=BMSDasboard`;

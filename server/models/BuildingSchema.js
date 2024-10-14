@@ -6,5 +6,5 @@ const BuildingSchema = new mongoose.Schema({
     total_floors:Number,
     last_updated:Date
 })
-const Buildings = mongoose.model('Buildings',BuildingSchema)
-export default Buildings;
+const Buildings =  mongoose.models.Buildings || mongoose.model('Buildings',BuildingSchema)
+export default Buildings; 
