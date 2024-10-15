@@ -35,7 +35,7 @@ app.get('/',async(req,res)=>{
     const contractor = await Contractor.find();
     const buildings = await Buildings.find();
     const datas={cases,resident,contractor,workOrders,buildings}
-  res.json(datas);
+    res.json(datas);
 })
 connectToMongo();
 app.use(express.json());
