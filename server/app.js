@@ -6,7 +6,9 @@ import Contractor from './models/ContractorsModel.js';
 import Case from './models/CaseModel.js';
 import WorkOrder from './models/WorkOrders.js';
 import Buildings from './models/BuildingSchema.js';
+import dotenv from 'dotenv';
 const app = express();
+dotenv.config();
 app.use(cors({
   origin: '*',
   methods:["GET"],
@@ -14,7 +16,7 @@ app.use(cors({
 }));
 const port =  process.env.PORT  || 3000;
 
-const uri = `mongodb+srv://lordmurugan2023:OHKknibIQ0sFaWJf@bmsdasboard.kad5l.mongodb.net/?retryWrites=true&w=majority&appName=BMSDasboard`;
+const uri = process.env.MONGODB_URI;
 async function connectToMongo() {
   try {
     await mongoose.connect(uri);
@@ -23,8 +25,10 @@ async function connectToMongo() {
     console.error('Error connecting to MongoDB:', error);
   }
 }
+app.get('*', (req, res) => {
+  res.status(404).send('Page not found');
+});
 
-app.use(cors());
 app.get('/',async(req,res)=>{
   const workOrders = await WorkOrder.find().populate('contractor');
     const cases = await Case.find();
