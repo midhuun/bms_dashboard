@@ -23,7 +23,7 @@ const Navbar = () => {
   <div className="flex flex-col pt-[10px] w-64 h-screen bg-white border-r">
    <div className='flex flex-col items-center'>
     <div className="flex flex-col w-[80%] rounded-md shadow-md py-3 mt-10 lg:mt-0 justify-center">
-      <img src={Cebu} alt="Logo" classname="rounded-lg h-16 object-cover" />
+      <img src={Cebu} alt="Logo" className="rounded-lg h-16 object-cover" />
       <h1 className="ml-1 border-b p-2 mb-1 text-md w-full items-center self-start flex justify-between ">Cebu Towers <span><RxCaretDown className='mx-3'/></span></h1>
       <p className='text-gray-300 px-2  text-[12px]'>200 George Street</p>
       <p className='text-gray-300 px-2 text-[12px]'>Sydney NSW 2000</p>

@@ -28,7 +28,7 @@ function App() {
   async function getData() {
     setLoading(true);
     try {
-      const result = await fetch('https://localhost:3000');
+      const result = await fetch('http://localhost:3000/');
       const data = await result.json();
       setResults(data)
       console.log(data);

@@ -10,7 +10,7 @@ import dotenv from 'dotenv';
 const app = express();
 dotenv.config();
 app.use(cors({
-  origin: 'https://bms-dashboard-midhun.vercel.app',
+  origin: 'http://localhost:5173',
   methods:["GET"]
 }));
 const port =  process.env.PORT  || 3000;
@@ -24,9 +24,6 @@ async function connectToMongo() {
     console.error('Error connecting to MongoDB:', error);
   }
 }
-app.get('*', (req, res) => {
-  res.status(404).send('Page not found');
-});
 
 app.get('/',async(req,res)=>{
   const workOrders = await WorkOrder.find().populate('contractor');
