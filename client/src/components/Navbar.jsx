@@ -17,7 +17,7 @@ const Navbar = () => {
     <>
     <RiMenu2Line onClick={()=>setisMenu(!isMenu)} size={24} className='cursor-pointer absolute top-9 left-1 block md:hidden' />
     <div className={`z-[1000] ${isMenu?"fixed":"hidden"} relative lg:fixed w-64 lg:block left-0`}>
-    <div  className='w-8 lg:hidden cursor-pointer h-8 flex justify-center items-center rounded-full text-red-500 bg-white hover:text-white absolute right-3 top-3 hover:bg-red-500 transition delay-100'>
+    <div  className='w-8 lg:hidden cursor-pointer h-8 flex justify-center items-center rounded-full text-red-500 bg-white  absolute right-3 top-3 hover:bg-red-500 transition delay-100'>
       <IoClose  onClick={()=>setisMenu(!isMenu)} />
     </div>
   <div className="flex flex-col pt-[10px] w-64 h-screen bg-white border-r">
